@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Basic information about this page -->
+<meta charset="utf-8">
+<title>SCP-079-CAPTCHA</title>
+<link rel="icon" href="../images/fav.png">
+<!-- Style and scripts files -->
+<link rel="stylesheet" type="text/css" href="../css/style.css">
+<!-- Meta tag looking for mobile devices -->
+<meta name="viewport" content="initial-scale=1.0">
+<meta name="theme-color" content="#232323">
+<!-- Good information about this page -->
+<meta name="description" content="Anti-spam project for Telegram groups">
+<meta name="keywords" content="SCP-079, anti-spam, project, telegram, groups">
+<meta name="author" content="SCP-079">
+<!-- Feed links -->
+<link rel="alternate" type="application/rss+xml" title="SCP-079's RSS Feed" href="../rss.xml">
+<link rel="alternate" type="application/atom+xml" title="SCP-079's Atom Feed" href="../atom.xml">
+<!-- Open Graph -->
+<meta property="og:site_name" content="SCP-079" />
+<meta property="og:title" content="SCP-079-CAPTCHA" />
+<meta property="og:type" content="website" />
+<meta property="og:description" content="Anti-spam project for Telegram groups" />
+<meta property="og:url" content="/captcha-manual-zh/index.html" />
+<meta property="og:image:type" content="image/png" />
+<meta property="og:image" content="/images/cover.png" />
+<meta property="og:locale" content="en" />
+
+<!-- Highlight -->
+<link rel="stylesheet" href="../css/highlight.min.css">
+<script src="../js/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<!-- Redirect -->
+<script>
+    if (location.hostname.search("gitlab.io") != -1) { 
+        var path;
+        if (location.pathname.lastIndexOf("/", 0) === 0) { 
+            path = location.pathname;
+        } else { 
+            path = "/" + location.pathname;
+        } 
+        location.href = "https://scp-079.org" + path + location.search + location.hash;
+    }
+</script>
+</head>
+
+<body>
+<header>
+<pre class="ascii logo">
+<!-- LARGE IMAGE BEGINS HERE -->
+<font size="-3" class="large-avatar">
+<pre><font color="black">0100000101110111011000010110101101100101001011100010</font><font color="#909090">0</font><font color="white">00001001110011001010111011001100101011100100010</font><br><font color="black">0000010100110110110001100101011001010111000000101110</font><font color="#909090">0</font><font color="white">01000000100000101110111011000010110101101100101</font><br><font color="black">0010111000100000010011100110010101110110011001010111</font><font color="#909090">0</font><font color="white">01000100000010100110110110001100101011001010111</font><br><font color="black">0000001011100010000001000001011101110110000101101011</font><font color="#909090">0</font><font color="white">11001010010111000100000010011100110010101110110</font><br><font color="black">0110010101110010001000000101001101101100011001010110</font><font color="#909090">0</font><font color="white">10101110000001011100010000001000001011101110110</font><br><font color="black">0001011010110110010100101110001000000100111001100101</font><font color="#939393">0</font><font color="white">11101100110010101110010001000000101001101101100</font><br><font color="black">0110010101100101011100000010111000100000010000010111</font><font color="#979797">0</font><font color="white">11101100001011010110110010100101110001000000100</font><br><font color="black">1110011001010111011001100101011100100010000001010011</font><font color="#9c9c9c">0</font><font color="white">11011000110010101100101011100000010111000100000</font><br><font color="black">0100000101110111011000010110101101100101001011100010</font><font color="#9f9f9f">0</font><font color="white">00001001110011001010111011001100101011100100010</font><br><font color="black">0000010100110110110001100101011001010111000000101110</font><font color="#a2a2a2">0</font><font color="white">01000000100000101110111011000010110101101100101</font><br><font color="black">0010111000100000010011100110010101110110011001010111</font><font color="#a2a2a2">0</font><font color="white">01000100000010100110110110001100101011001010111</font><br><font color="black">0000001011100010000001000001011101110110000101101011</font><font color="#a4a4a4">0</font><font color="white">110010100101</font><font color="#f7f7f7">1</font><font color="#c8c8c8">1</font><font color="#a4a4a4">0</font><font color="#909090">0</font><font color="#888888">0</font><font color="#8a8a8a">1</font><font color="#969696">0</font><font color="#aaaaaa">0</font><font color="#c6c6c6">0</font><font color="#ededed">0</font><font color="white">0010011100110010101110110</font><br><font color="black">011001010111001000100000</font><font color="#060606">0</font><font color="#202020">1</font><font color="#5e5e5e">0</font><font color="#8e8e8e">1</font><font color="#aaaaaa">0</font><font color="#b9b9b9">0</font><font color="#c2c2c2">1</font><font color="#c5c5c5">1</font><font color="#c4c4c4">0</font><font color="#bcbcbc">1</font><font color="#b1b1b1">1</font><font color="#a0a0a0">0</font><font color="#828282">1</font><font color="#515151">1</font><font color="#1a1a1a">0</font><font color="#040404">0</font><font color="black">011001010110</font><font color="#a6a6a6">0</font><font color="white">101011100</font><font color="#f5f5f5">0</font><font color="#b8b8b8">0</font><font color="#5a5a5a">0</font><font color="#131313">0</font><font color="#050505">1</font><font color="#010101">0</font><font color="black">1110</font><font color="#010101">0</font><font color="#040404">0</font><font color="#090909">1</font><font color="#333333">0</font><font color="#898989">0</font><font color="#e6e6e6">0</font><font color="#fefefe">0</font><font color="white">001000001011101110110</font><br><font color="black">0001011010110110010100</font><font color="#0a0a0a">1</font><font color="#555555">0</font><font color="#b8b8b8">1</font><font color="#f6f6f6">1</font><font color="white">100010000001</font><font color="#f1f1f1">0</font><font color="#aaaaaa">0</font><font color="#3d3d3d">1</font><font color="#010101">1</font><font color="black">1001100101</font><font color="#a8a8a8">0</font><font color="white">1110110</font><font color="#fafafa">0</font><font color="#ababab">1</font><font color="#343434">1</font><font color="black">00101011100100</font><font color="#161616">0</font><font color="#7f7f7f">1</font><font color="#e9e9e9">0</font><font color="white">00000101001101101100</font><br><font color="black">011001010110010101110</font><font color="#2b2b2b">0</font><font color="#c2c2c2">0</font><font color="#fcfcfc">0</font><font color="white">0010111000100000</font><font color="#f5f5f5">0</font><font color="#878787">1</font><font color="#020202">0</font><font color="black">000010111</font><font color="#ababab">0</font><font color="white">111011</font><font color="#eeeeee">0</font><font color="#585858">0</font><font color="#050505">0</font><font color="black">01011010110110010</font><font color="#282828">1</font><font color="#d9d9d9">0</font><font color="white">0101110001000000100</font><br><font color="black">11100110010101110110</font><font color="#1f1f1f">0</font><font color="#e6e6e6">1</font><font color="white">1001010111001000100</font><font color="#fefefe">0</font><font color="#666666">0</font><font color="black">001010011</font><font color="#afafaf">0</font><font color="white">11011</font><font color="#f3f3f3">0</font><font color="#393939">0</font><font color="black">01100101011001010111</font><font color="#242424">0</font><font color="#d7d7d7">0</font><font color="white">000010111000100000</font><br><font color="black">01000001011101110110</font><font color="#ababab">0</font><font color="white">001011010110110010100</font><font color="#e2e2e2">1</font><font color="#060606">0</font><font color="black">11100010</font><font color="#b4b4b4">0</font><font color="white">00001</font><font color="#8e8e8e">0</font><font color="black">0111001100101011101100</font><font color="#222222">1</font><font color="#e8e8e8">1</font><font color="white">00101011100100010</font><br><font color="black">0000010100110110110</font><font color="#080808">0</font><font color="#f7f7f7">0</font><font color="white">1100101011001010111000</font><font color="#2e2e2e">0</font><font color="black">00101110</font><font color="#b8b8b8">0</font><font color="white">01000</font><font color="#696969">0</font><font color="black">00100000101110111011000</font><font color="#a6a6a6">0</font><font color="white">10110101101100101</font><br><font color="black">0010111000100000010</font><font color="#010101">0</font><font color="#929292">1</font><font color="#f2f2f2">1</font><font color="#fefefe">1</font><font color="white">001100101011101100</font><font color="#f5f5f5">1</font><font color="#cecece">1</font><font color="#191919">0</font><font color="black">01010111</font><font color="#b4b4b4">0</font><font color="white">01000</font><font color="#b2b2b2">1</font><font color="#040404">0</font><font color="black">00000101001101101100</font><font color="#050505">0</font><font color="#545454">1</font><font color="#f5f5f5">1</font><font color="white">00101011001010111</font><br><font color="black">000000101110001000000</font><font color="#232323">1</font><font color="#6c6c6c">0</font><font color="#afafaf">0</font><font color="#d6d6d6">0</font><font color="#ececec">0</font><font color="#fbfbfb">0</font><font color="white">10111011</font><font color="#fdfdfd">1</font><font color="#f1f1f1">0</font><font color="#e0e0e0">1</font><font color="#cbcbcb">1</font><font color="#a1a1a1">0</font><font color="#686868">0</font><font color="#2e2e2e">0</font><font color="#020202">0</font><font color="black">101101011</font><font color="#4f4f4f">0</font><font color="#fefefe">1</font><font color="white">10010</font><font color="#9b9b9b">1</font><font color="#232323">0</font><font color="#010101">0</font><font color="black">1011100010000001</font><font color="#181818">0</font><font color="#525252">0</font><font color="#b7b7b7">1</font><font color="#fefefe">1</font><font color="white">100110010101110110</font><br><font color="black">011001010111001000100000</font><font color="#0e0e0e">0</font><font color="#232323">1</font><font color="#333333">0</font><font color="#484848">1</font><font color="#5a5a5a">0</font><font color="#656565">0</font><font color="#6b6b6b">11</font><font color="#666666">0</font><font color="#5b5b5b">1</font><font color="#4b4b4b">1</font><font color="#383838">0</font><font color="#292929">1</font><font color="#181818">1</font><font color="#060606">0</font><font color="black">0011001010110</font><font color="#030303">0</font><font color="#bfbfbf">1</font><font color="white">010111</font><font color="#eaeaea">0</font><font color="#b1b1b1">0</font><font color="#737373">0</font><font color="#484848">0</font><font color="#2c2c2c">0</font><font color="#161616">0</font><font color="#080808">1</font><font color="#010101">0</font><font color="black">11100</font><font color="#050505">0</font><font color="#1c1c1c">1</font><font color="#414141">0</font><font color="#717171">0</font><font color="#aeaeae">0</font><font color="#e0e0e0">0</font><font color="#fefefe">0</font><font color="white">01000001011101110110</font><br><font color="black">00010110101101100101001011100010000001001110011001010</font><font color="#3b3b3b">1</font><font color="#fefefe">1</font><font color="white">10110011</font><font color="#fbfbfb">0</font><font color="#f6f6f6">0</font><font color="#f1f1f1">1</font><font color="#eeeeee">0</font><font color="#e8e8e8">1</font><font color="#e1e1e1">0</font><font color="#dddddd">1</font><font color="#dcdcdc">11</font><font color="#e2e2e2">0</font><font color="#ececec">0</font><font color="#f3f3f3">1</font><font color="#fafafa">0</font><font color="white">001000000101001101101100</font><br><font color="black">01100101011001010111000000101110001000000100000101110</font><font color="#010101">1</font><font color="#cccccc">1</font><font color="white">101100001011010110110010100101110001000000100</font><br><font color="black">111001100101011101100110010101110010001000000</font><font color="#090909">1</font><font color="#151515">0</font><font color="#0e0e0e">1</font><font color="#070707">0</font><font color="#030303">0</font><font color="#010101">1</font><font color="black">10</font><font color="#070707">1</font><font color="#bebebe">1</font><font color="white">011000110010101100101011100000010111000100000</font><br><font color="black">010000010111011101100001011010110110010100101</font><font color="#050505">1</font><font color="#565656">1</font><font color="silver">0</font><font color="#e8e8e8">0</font><font color="#eaeaea">0</font><font color="#e6e6e6">1</font><font color="#e3e3e3">00</font><font color="#eaeaea">0</font><font color="#fdfdfd">0</font><font color="white">001001110011001010111011001100101011100100010</font><br><font color="black">00000101001101101100011001010110010101110000001</font><font color="#040404">0</font><font color="#4c4c4c">1</font><font color="#b5b5b5">1</font><font color="#f4f4f4">1</font><font color="white">0001000000100000101110111011000010110101101100101</font><br><font color="black">00101110001000000100111001100101011101100110010</font><font color="#030303">1</font><font color="#0f0f0f">0</font><font color="#202020">1</font><font color="#646464">1</font><font color="#e1e1e1">1</font><font color="white">001000100000010100110110110001100101011001010111</font><br><font color="black">000000101110001000000100000101</font><font color="#080808">1</font><font color="#3a3a3a">1</font><font color="#5a5a5a">0</font><font color="#7c7c7c">1</font><font color="#939393">1</font><font color="#979797">1</font><font color="#9b9b9b">0</font><font color="#9e9e9e">1</font><font color="#9f9f9f">1</font><font color="#a1a1a1">0</font><font color="#a6a6a6">0</font><font color="#ababab">0</font><font color="#b2b2b2">0</font><font color="#bababa">1</font><font color="#c3c3c3">0</font><font color="#cecece">1</font><font color="#dbdbdb">1</font><font color="#e7e7e7">0</font><font color="#ececec">1</font><font color="#f0f0f0">0</font><font color="#f4f4f4">1</font><font color="#fbfbfb">1</font><font color="white">011001010010111000100000010011100110010101110110</font><br><font color="black">0110010101110010001000000101001101</font><font color="#0d0d0d">1</font><font color="#2f2f2f">0</font><font color="#525252">1</font><font color="#757575">1</font><font color="#989898">0</font><font color="#bbbbbb">0</font><font color="#d4d4d4">0</font><font color="#e2e2e2">1</font><font color="#f0f0f0">1</font><font color="#fcfcfc">0</font><font color="white">01010110010101110000001011100010000001000001011101110110</font><br><font color="black">0001011010110110010100101110001000000100</font><font color="#080808">1</font><font color="#191919">1</font><font color="#2a2a2a">1</font><font color="#3c3c3c">0</font><font color="#555555">0</font><font color="#707070">1</font><font color="#898989">1</font><font color="#a1a1a1">0</font><font color="#b4b4b4">0</font><font color="#c4c4c4">1</font><font color="#d1d1d1">0</font><font color="#dcdcdc">1</font><font color="#e4e4e4">0</font><font color="#eaeaea">1</font><font color="#f4f4f4">1</font><font color="white">101100110010101110010001000000101001101101100</font><br><font color="black">011001010110010101110000001011100010000001000001</font><font color="#030303">0</font><font color="#080808">1</font><font color="#0c0c0c">1</font><font color="#0f0f0f">1</font><font color="#141414">0</font><font color="#242424">1</font><font color="#787878">1</font><font color="#f7f7f7">1</font><font color="white">01100001011010110110010100101110001000000100</font><br><font color="black">1110011001010111011001100101011100100010000001010</font><font color="#151515">0</font><font color="#353535">1</font><font color="#6e6e6e">1</font><font color="#b1b1b1">0</font><font color="#f2f2f2">1</font><font color="white">1011000110010101100101011100000010111000100000</font><br><font color="black">0100000101110111011000010110101101100101001011100</font><font color="#b1b1b1">0</font><font color="#fcfcfc">1</font><font color="white">0000001001110011001010111011001100101011100100010</font><br><font color="black">0000010100110110110001100101011001010111000000101</font><font color="#c5c5c5">1</font><font color="white">10001000000100000101110111011000010110101101100101</font><br><font color="black">0010111000100000010011100110010101110110011001010</font><font color="#c5c5c5">1</font><font color="white">11001000100000010100110110110001100101011001010111</font><br><font color="black">0000001011100010000001000001011101110110000101101</font><font color="#c5c5c5">0</font><font color="white">11011001010010111000100000010011100110010101110110</font><br><font color="black">0110010101110010001000000101001101101100011001010</font><font color="#c5c5c5">1</font><font color="white">10010101110000001011100010000001000001011101110110</font><br><font color="black">0001011010110110010100101110001000000100111001100</font><font color="#c5c5c5">1</font><font color="white">01011101100110010101110010001000000101001101101100</font><br><font color="black">0110010101100101011100000010111000100000010000010</font><font color="#c6c6c6">1</font><font color="white">11011101100001011010110110010100101110001000000100</font><br><font color="black">1110011001010111011001100101011100100010000001010</font><font color="#c6c6c6">0</font><font color="white">11011011000110010101100101011100000010111000100000</font><br><font color="black">0100000101110111011000010110101101100101001011100</font><font color="#c6c6c6">0</font><font color="white">10000001001110011001010111011001100101011100100010</font><br><font color="black">0000010100110110110001100101011001010111000000101</font><font color="#c6c6c6">1</font><font color="white">10001000000100000101110111011000010110101101100101</font><br><font color="black">0010111000100000010011100110010101110110011001010</font><font color="#c6c6c6">1</font><font color="white">11001000100000010100110110110001100101011001010111</font><br>
+</pre></font><!-- LARGE IMAGE ENDS HERE --><!-- SMALL IMAGE BEGINS HERE --><font size="-3" class="small-avatar"><pre><font color="black">010011110111010101110100001011100010</font><font color="#4b4b4b">0</font><font color="white">000010010010010000001110111011000</font><br><font color="black">010110111001110100001000000110111101</font><font color="#4b4b4b">1</font><font color="white">101010111010000101110001000000100</font><br><font color="black">111101110101011101000010111000100000</font><font color="#4b4b4b">0</font><font color="white">100100100100000011101110110000101</font><br><font color="black">101110011101000010000001101111011101</font><font color="#4c4c4c">0</font><font color="white">101110100001011100010000001001111</font><br><font color="black">011101010111010000101110001000000100</font><font color="#505050">1</font><font color="white">001001000000111011101100001011011</font><br><font color="black">100111010000100000011011110111010101</font><font color="#555555">1</font><font color="white">101000010111000100000010011110111</font><br><font color="black">010101110100001011100010000001001001</font><font color="#575757">0</font><font color="white">010000001110111011000010110111001</font><br><font color="black">110100001000000110111101110101011101</font><font color="#585858">0</font><font color="white">0001011100</font><font color="#f8f8f8">0</font><font color="#efefef">1</font><font color="#f1f1f1">0</font><font color="#fbfbfb">0</font><font color="white">0000100111101110101</font><br><font color="black">01110100001011100</font><font color="#010101">0</font><font color="#2c2c2c">1</font><font color="#595959">0</font><font color="#6d6d6d">0</font><font color="#767676">0</font><font color="#777777">0</font><font color="#717171">0</font><font color="#646464">0</font><font color="#4b4b4b">1</font><font color="#181818">0</font><font color="black">010010010</font><font color="#5a5a5a">0</font><font color="white">0000111</font><font color="#d9d9d9">0</font><font color="#818181">1</font><font color="#3f3f3f">1</font><font color="#212121">1</font><font color="#1d1d1d">01</font><font color="#232323">1</font><font color="#3c3c3c">0</font><font color="#6c6c6c">0</font><font color="#bababa">0</font><font color="#fefefe">0</font><font color="white">101101110011101</font><br><font color="black">000010000001101</font><font color="#151515">1</font><font color="#797979">1</font><font color="#dfdfdf">1</font><font color="white">01110101</font><font color="#fefefe">0</font><font color="#c3c3c3">1</font><font color="#4b4b4b">1</font><font color="#030303">1</font><font color="black">010000</font><font color="#5d5d5d">1</font><font color="white">01110</font><font color="#d3d3d3">0</font><font color="#4e4e4e">0</font><font color="#010101">1</font><font color="black">000000100</font><font color="#303030">1</font><font color="#b5b5b5">1</font><font color="#fdfdfd">1</font><font color="white">1011101010111</font><br><font color="black">01000010111000</font><font color="#272727">1</font><font color="#d8d8d8">0</font><font color="white">000001001001</font><font color="#fbfbfb">0</font><font color="#6f6f6f">0</font><font color="black">100000</font><font color="#606060">0</font><font color="white">1110</font><font color="#afafaf">1</font><font color="#121212">1</font><font color="black">101100001011</font><font color="#040404">0</font><font color="#969696">1</font><font color="white">1100111010000</font><br><font color="black">10000001101111</font><font color="#bdbdbd">0</font><font color="white">11101010111010</font><font color="#f2f2f2">0</font><font color="#111111">0</font><font color="black">01011</font><font color="#656565">1</font><font color="white">000</font><font color="#f3f3f3">1</font><font color="#111111">0</font><font color="black">00000100111101</font><font color="#060606">1</font><font color="#a5a5a5">1</font><font color="white">010101110100</font><br><font color="black">0010111000100</font><font color="#040404">0</font><font color="#e6e6e6">0</font><font color="white">00100100100100</font><font color="#f8f8f8">0</font><font color="#373737">0</font><font color="black">00111</font><font color="#676767">0</font><font color="white">111</font><font color="#ededed">0</font><font color="#070707">1</font><font color="black">10000101101110</font><font color="#030303">0</font><font color="#7d7d7d">1</font><font color="white">110100001000</font><br><font color="black">00011011110111</font><font color="#232323">0</font><font color="#787878">1</font><font color="#bababa">0</font><font color="#dddddd">1</font><font color="#f4f4f4">0</font><font color="white">11101</font><font color="#fcfcfc">0</font><font color="#ececec">0</font><font color="#d5d5d5">0</font><font color="#b6b6b6">0</font><font color="gray">1</font><font color="#3e3e3e">0</font><font color="#030303">1</font><font color="black">11000</font><font color="#303030">1</font><font color="#fafafa">0</font><font color="white">000</font><font color="#999999">0</font><font color="#1d1d1d">0</font><font color="black">10011110111</font><font color="#090909">0</font><font color="#3e3e3e">1</font><font color="#a1a1a1">0</font><font color="#fafafa">1</font><font color="white">011101000010</font><br><font color="black">1110001000000100</font><font color="#040404">1</font><font color="#131313">0</font><font color="#1f1f1f">0</font><font color="#2c2c2c">1</font><font color="#393939">0</font><font color="#3f3f3f">0</font><font color="#3c3c3c">1</font><font color="#333333">0</font><font color="#242424">0</font><font color="#1b1b1b">0</font><font color="#101010">0</font><font color="#030303">0</font><font color="black">011101110</font><font color="#a1a1a1">1</font><font color="white">1000</font><font color="#e9e9e9">0</font><font color="#b8b8b8">1</font><font color="#878787">0</font><font color="#686868">1</font><font color="#545454">1</font><font color="#484848">0</font><font color="#424242">1</font><font color="#414141">1</font><font color="#434343">1</font><font color="#515151">0</font><font color="#727272">0</font><font color="#a5a5a5">1</font><font color="#dbdbdb">1</font><font color="#f7f7f7">1</font><font color="white">01000010000001</font><br><font color="black">1011110111010101110100001011100010000</font><font color="#242424">0</font><font color="#fefefe">0</font><font color="white">1001111011101010111010000101110</font><br><font color="black">0010000001001001001000000111011</font><font color="#010101">1</font><font color="#2d2d2d">0</font><font color="#414141">1</font><font color="#3c3c3c">1</font><font color="#383838">0</font><font color="#373737">0</font><font color="#444444">0</font><font color="#fafafa">0</font><font color="white">1011011100111010000100000011011</font><br><font color="black">11011101010111010000101110001000</font><font color="#181818">0</font><font color="#6b6b6b">0</font><font color="#d7d7d7">0</font><font color="#f7f7f7">1</font><font color="#f6f6f6">0</font><font color="#fafafa">0</font><font color="white">11110111010101110100001011100010</font><br><font color="black">000001001001001000000</font><font color="#050505">1</font><font color="#111111">11</font><font color="#101010">0</font><font color="#0f0f0f">11</font><font color="#101010">1</font><font color="#121212">0</font><font color="#141414">1</font><font color="#161616">1</font><font color="#191919">0</font><font color="#1e1e1e">0</font><font color="#232323">0</font><font color="#333333">0</font><font color="#999999">1</font><font color="#fdfdfd">0</font><font color="white">110111001110100001000000110111101</font><br><font color="black">110101011101000010111</font><font color="#090909">0</font><font color="#252525">0</font><font color="#474747">0</font><font color="#6d6d6d">1</font><font color="#919191">0</font><font color="#aaaaaa">0</font><font color="#c2c2c2">0</font><font color="#d8d8d8">0</font><font color="#dddddd">0</font><font color="#e2e2e2">0</font><font color="#e9e9e9">1</font><font color="#f1f1f1">0</font><font color="#fbfbfb">0</font><font color="white">111101110101011101000010111000100000</font><br><font color="black">0100100100100000011101110</font><font color="#030303">1</font><font color="#0f0f0f">1</font><font color="#1a1a1a">0</font><font color="#292929">0</font><font color="#474747">0</font><font color="#646464">0</font><font color="gray">1</font><font color="#9a9a9a">0</font><font color="#b1b1b1">1</font><font color="#c6c6c6">1</font><font color="#d8d8d8">0</font><font color="#e4e4e4">1</font><font color="#ececec">1</font><font color="#fbfbfb">1</font><font color="white">0011101000010000001101111011101</font><br><font color="black">01011101000010111000100000010011110</font><font color="#0b0b0b">1</font><font color="#232323">1</font><font color="#666666">1</font><font color="#d2d2d2">0</font><font color="white">1010111010000101110001000000100</font><br><font color="black">1001001000000111011101100001011011</font><font color="#5e5e5e">1</font><font color="#cccccc">0</font><font color="#f4f4f4">0</font><font color="white">111010000100000011011110111010101</font><br><font color="black">1101000010111000100000010011110111</font><font color="#8a8a8a">0</font><font color="white">10101110100001011100010000001001001</font><br><font color="black">0010000001110111011000010110111001</font><font color="#8a8a8a">1</font><font color="white">10100001000000110111101110101011101</font><br><font color="black">0000101110001000000100111101110101</font><font color="#8a8a8a">0</font><font color="white">11101000010111000100000010010010010</font><br><font color="black">0000011101110110000101101110011101</font><font color="#8a8a8a">0</font><font color="white">00010000001101111011101010111010000</font><br><font color="black">1011100010000001001111011101010111</font><font color="#8b8b8b">0</font><font color="white">10000101110001000000100100100100000</font><br><font color="black">0111011101100001011011100111010000</font><font color="#8a8a8a">1</font><font color="white">00000011011110111010101110100001011</font><br><font color="black">1000100000010011110111010101110100</font><font color="#8a8a8a">0</font><font color="white">01011100010000001001001001000000111</font><br></pre></font>
+<!-- SMALL IMAGE ENDS HERE -->
+</pre>
+<pre class="ascii name site-name">
+███████╗ ██████╗██████╗        ██████╗ ███████╗ █████╗ 
+██╔════╝██╔════╝██╔══██╗      ██╔═████╗╚════██║██╔══██╗
+███████╗██║     ██████╔╝█████╗██║██╔██║    ██╔╝╚██████║
+╚════██║██║     ██╔═══╝ ╚════╝████╔╝██║   ██╔╝  ╚═══██║
+███████║╚██████╗██║           ╚██████╔╝   ██║   █████╔╝
+╚══════╝ ╚═════╝╚═╝            ╚═════╝    ╚═╝   ╚════╝ 
+                                                       
+</pre>
+</header>
+
+<nav>
+<ul>
+<li><a href="../">Home</a></li>
+<li><a href="../about/">About</a></li>
+<li><a href="../contact/">Contact</a></li>
+<li><a href="../team/">Team</a></li>
+<li><a href="../projects/" target>Projects</a></li>
+<li><a href="../tools/">Tools</a></li>
+<li><a href="../archives/">Posts</a></li>
+<li><a href="../rss.xml" class="rss" target="_blank">RSS</a>/<a href="../atom.xml" class="rss" target="_blank">Atom</a></li>
+</ul>
+</nav>
+
+<main>
+<p><link rel="stylesheet" href="../css/chinese.css"> <button onmouseover="PlaySound('totop1')" onmouseout="StopSound('totop1')" onclick="window.location.href = '/captcha-manual/';" class="en">Click Here to English Page</button></p>
+<hr />
+<h1 id="scp-079-captcha-使用手册">SCP-079-CAPTCHA 使用手册</h1>
+<p>本文介绍如何使用 SCP-079-CAPTCHA 的机器人实例，对应的搭建说明在<a href="../captcha-zh/">此处</a>。</p>
+<hr />
+<h2 id="简介">简介</h2>
+<p>本机器人提供对新入群用户的验证审核。群组如开启了免验证模式，用户在成功验证一次后，在一段时间内可以自动在多群免验证。并且，验证流程不会在群内呈现，多人进群也不会造成验证码的刷屏，本机器人力求以最简短最不干扰群组内正常交流的方式提醒用户进行验证。同时，为满足各群组的不同需求，本机器人同时支持设置自定义问题。</p>
+<hr />
+<h2 id="所需权限">所需权限</h2>
+<p>机器人若需正常工作，则在群组中需要如图所示的权限，权限缺失可能将导致机器人退出群组：</p>
+<figure>
+<img src="../images/captcha-zh/permissions.png" alt /><figcaption>PERMISSONS</figcaption>
+</figure>
+<hr />
+<h2 id="运作流程">运作流程</h2>
+<p>以下介绍机器人的工作流程，在进行使用和设置前，建议您了解此流程。<br> 注意：<code>此处介绍的为机器人默认设置的流程，如需查看自定义问题的验证流程，请见「设置自定义问题」一节。</code></p>
+<hr />
+<h3 id="提示部分">提示部分</h3>
+<h4 id="单个用户入群">单个用户入群</h4>
+<ol type="1">
+<li>机器人将禁言用户，同时机器人将回复用户的入群消息，提供一个按钮 <code>前往验证</code>，点击按钮会前往专用验证群组。</li>
+<li>提示消息中默认以用户 ID 的形式 mention 该用户。群组可通过命令自定义该入群提示。</li>
+</ol>
+<figure>
+<img src="../images/captcha-zh/single.png" alt /><figcaption>单用户入群时的默认提示</figcaption>
+</figure>
+<h4 id="多个用户入群">多个用户入群</h4>
+<ol type="1">
+<li>当多个用户入群时，机器人将禁言用户，同时机器人将回复用户的入群消息，提供两个按钮，左侧按钮为：<code>我需要验证吗</code>，用户点击该按钮，机器人会用弹出窗口的形式回复该用户是否需要验证；右侧按钮为：<code>前往验证</code>，点击按钮会前往专用验证群组。</li>
+<li>在触发验证的原始群组中，用户验证提示消息只保留最后一条，因此即使多名用户短时间入群，群内也<code>只有一条验证提示消息</code>，该条验证提示消息会显示待验证的用户数量，同时，<code>会以多个不可见的字符在消息内 @ 所有待验证的用户</code>，通常情况下每个用户都能再次得到此条消息的通知提示，防止了稍早入群的待验证用户忽视该验证提示消息。群组可通过命令自定义该入群提示。</li>
+</ol>
+<figure>
+<img src="../images/captcha-zh/multi.png" alt /><figcaption>多用户入群时的常规提示</figcaption>
+</figure>
+<figure>
+<img src="../images/captcha-zh/check.png" alt /><figcaption>待验证用户点击「我需要验证吗」按钮后，收到的提示</figcaption>
+</figure>
+<h3 id="验证部分">验证部分</h3>
+<p>需要验证的用户加入专用验证群组中，会触发随机类别的问题——</p>
+<ul>
+<li>文字形式的数学加减法运算（提供备选按钮）</li>
+<li>图片形式的数字验证码（可更换问题）</li>
+<li>图片形式的汉字成语验证码（可更换问题）</li>
+<li>图片形式的英文字母验证码（可更换问题）</li>
+<li>图片形式的看图辨物（提供备选按钮）</li>
+<li>图片形式的数学加减法运算（提供备选按钮）（可更换问题）</li>
+<li>图片形式的汉字验证码（提供备选按钮）（文字是与食品有关的名称）</li>
+</ul>
+<figure>
+<img src="../images/captcha-zh/question.png" alt /><figcaption>举例：用户随机抽到的图片形式的数学加减法运算</figcaption>
+</figure>
+<p><code>如用户在有限时间内正确回答</code>，即验证通过，用户在最初触发验证的群组中将被解除禁言。同时用户将在几分钟后于专用验证群组中被移除。</p>
+<figure>
+<img src="../images/captcha-zh/succeed.png" alt /><figcaption>验证通过后的提示</figcaption>
+</figure>
+<p><code>如用户回答超时</code>，或在有限时间内根本未加入专用验证群组，将导致验证失败。如用户在专用验证群组中回答超时，该用户将在 10 秒后于专用验证群组中移除。初次超时失败将在原始群组中封禁用户，10 分钟后解封，解封后用户可再次加入原始群组触发验证，如果第二次再次超时失败，将在原始群组中永久封禁该用户。</p>
+<figure>
+<img src="../images/captcha-zh/timeout.png" alt /><figcaption>验证超时后的提示</figcaption>
+</figure>
+<p><code>如用户回答错误</code>，导致验证失败，用户将在 15 秒后在专用验证群组中被移除，错误提示中会留下建议，提醒用户在 10 分钟后可再次加入原始群组中触发验证。回答错误的同时，将在原始群组中封禁用户，10 分钟后解封，解封后用户可再次加入原始群组触发验证。尚未对该类失败的尝试次数做出限制。</p>
+<figure>
+<img src="../images/captcha-zh/wrong.png" alt /><figcaption>验证失败后的提示</figcaption>
+</figure>
+<h3 id="无关人员">无关人员</h3>
+<p>不需要验证的用户如果加入专用验证群组中，会被机器人踢出。有时用户反复入群，可能不会重复发送入群的服务消息（xxx joined the group），此时机器人将不能够立即踢出这名不需要验证的用户，但机器人会每 10 分钟获取专用验证群组的所有用户，对无关用户进行踢出操作。</p>
+<h3 id="开放监督">开放监督</h3>
+<p>所有 CAPTCHA 所在群组中的所有管理员，可随意加入专用验证群组中查看机器人运行情况。USER、LONG、和 CAPTCHA 将共同保证专用群组中没有任何多余消息。</p>
+<h3 id="极端情况应对">极端情况应对</h3>
+<p>在大量用户短时间内入群（炸群）时，机器人将触发自动静态消息模式，即，对用户入群消息实行立即删除的操作（不保留任何入群消息）。如果群组开启了自动置顶功能（默认开启），将在此时发送一条独立提示，并将此提示置顶，不再重复发送入群提示消息。当轰炸结束后，自动恢复群组的原置顶。</p>
+<h3 id="跨机器人合作">跨机器人合作</h3>
+<p><em>与 NOSPAM 合作</em></p>
+<p>CAPTCHA 可以接收来自 NOSPAM 的针对某个用户的验证发起请求。当防广告的机器人 NOSPAM 判断用户应当被封禁时，如果经检查用户加入群组的时间较长，是一名 “老群员”，则将导致 “操作降级”。降级的操作将导致用户的消息被全局删除，但该用户不会被封禁；如果群组中存在 CAPTCHA ，则降级的操作可能不全局删除用户的消息（尽量保持对话的完整性），而是要求用户成功进行一次 CAPTCHA 验证后，方可正常发言。用户验证超时或失败仍旧会被 CAPTCHA 移出群组，10 分钟后解禁。</p>
+<p><em>与 TIP 合作</em></p>
+<p>当群组中有 TIP 机器人，CAPTCHA 会确保用户成功通过验证后，才通知 TIP 进行入群欢迎。</p>
+<hr />
+<h2 id="群组设置">群组设置</h2>
+<p>以下介绍如何在群组中更改机器人的设置。</p>
+<hr />
+<h3 id="按钮设置">按钮设置</h3>
+<p>管理员在群内发送：</p>
+<p><code>/config captcha</code></p>
+<p>即可通过 <a href="../config-zh/">SCP-079-CONFIG</a> 方便地调整机器人设置，机器人将回报前往设置的链接，5 分钟内设置将被锁定，无法再次更改。请记得在完成设置后点击「提交」按钮。</p>
+<figure>
+<img src="../images/captcha-zh/config.png" alt /><figcaption>SCP-079-CAPTCHA 的设置界面</figcaption>
+</figure>
+<p><code>协助删除：</code>用户验证失败时，令 USER 协助删除该用户所发所有消息（包括该用户入群消息，同时避免机器人在特殊情况下遗漏在成功禁言前用户所发的其他消息）。</p>
+<p><code>禁言模式：</code>多次验证失败，导致永久惩罚时，选择禁言该用户，而不是封禁该用户。</p>
+<p><code>封禁模式：</code>首次验证失败，选择直接永久封禁该用户，而不在 600 秒后解禁该用户（不给用户再次尝试的机会）。</p>
+<p><code>自动解禁：</code>当某名用户在其他群组验证成功，选择自动解除该用户在您的群组中受到的永久性惩罚。</p>
+<p><code>入群提示：</code>如关闭，机器人将不会发送新用户入群时的验证提示。某些群组可能有这类需求。群组可以在提示关闭后，在置顶消息、群组描述中提供必要说明，并提供 <code>@SCP_079_CAPTCHA</code> 的链接，让用户入群后主动地加入专用群组中进行验证。如群组一定要选择关闭入群提示，我们更推荐管理员在群内发送 <code>/static</code> 命令获取一个永久有效的验证提示消息，该消息同样有两个按钮，群组可在置顶和群组描述中提供该条消息的链接，这样用户即可通过按钮更清楚自己是否需要验证（static 消息只适用于新加入用户有权限查看群组历史消息的情况）。</p>
+<p><code>自动免验证：</code>开启后，用户在某个群组验证通过一段时间后，将不会再次重复地在其他群组触发验证。即使关闭，用户也会在几分钟内不需验证，这是为了保证用户已被从专用验证群组中移除。</p>
+<p><code>自动置顶：</code>开启后，当群组短时间内进入大量用户时，机器人将不再重复发送入群验证提示，而是发送一条通用提示，并将此提示置顶，其后保持静默。当群组的入群频率恢复正常状态，并保持正常状态一定时间后，机器人将自动取消置顶，如果群组之前已有置顶，则自动恢复群组原有的置顶消息。置顶产生的服务消息将被 USER 自动删除，以期最小化对群组正常对话的影响</p>
+<p><code>自定义问题</code>：开启后，当群组设定了自定义问题时，机器人将选取指定的问题提问用户。详情请见「设置自定义问题」一节。</p>
+<p><code>仅手动：</code>开启后，新用户入群将不再触发验证流程。无论是否开启，管理员都可以使用 <code>/captcha</code> 命令回复某用户，要求该用户进行一次验证（但机器人判断用户不需重复验证时，不会有反应）。</p>
+<h3 id="命令设置">命令设置</h3>
+<p>除使用 <code>/config captcha</code> 外，管理员也可以通过 <code>/config_captcha</code> 命令在群组中手动调整设置：</p>
+<ul>
+<li><code>/config_captcha 功能代号 on|off</code>：开启或关闭某功能 / 模式</li>
+</ul>
+<p>功能代号如下：</p>
+<ul>
+<li><code>delete</code>：协助删除</li>
+<li><code>restrict</code>：禁言模式</li>
+<li><code>ban</code>：封禁模式</li>
+<li><code>forgive</code>：自动解禁</li>
+<li><code>hint</code>：入群提示</li>
+<li><code>pass</code>：自动免验证</li>
+<li><code>pin</code>：自动置顶</li>
+<li><code>qns</code>：自定义问题</li>
+<li><code>manual</code>：仅手动</li>
+</ul>
+<p>例如开启自动免验证功能：</p>
+<p><code>/config_captcha pass on</code></p>
+<h3 id="设置自定义提示">设置自定义提示</h3>
+<p>注意：<code>本节说明的是如何设置「自定义提示」，而不是「自定义问题」。</code></p>
+<p>通过此命令可设置机器人所发送的验证提示：<code>/custom 类别代号 自定义提示内容</code></p>
+<p>类别代号如下：</p>
+<ul>
+<li><code>flood</code>：加群轰炸时的提示</li>
+<li><code>manual</code>：手动触发验证时的提示</li>
+<li><code>nospam</code>：NOSPAM 降级触发验证的提示</li>
+<li><code>single</code>：只有一名待验证用户时的提示</li>
+<li><code>static</code>：手动获取的静态消息的提示</li>
+<li><code>multi</code>：多名用户带验证时的提示</li>
+</ul>
+<p>自定义内容中可以添加与用户相关的代号：</p>
+<ul>
+<li><code>$mention_id</code>：此代号将自动被替换为用户的 ID 并 @ 该用户</li>
+<li><code>$mention_name</code>：此代号将自动被替换为用户昵称 并 @ 该用户</li>
+<li><code>$code_id</code>：代号将自动被替换为用户的 ID</li>
+<li><code>$code_name</code>：此代号将自动被替换为用户的昵称</li>
+<li><code>$code_count</code>：此代号仅在 <code>multi</code> 类别下有效，将替换为待验证用户的数量，例如：<code>3</code></li>
+</ul>
+<p>注意事项：</p>
+<ol type="1">
+<li>当类别为 <code>nospam</code> 时，自定义内容应至少包含 <code>$mention_id</code> 和 <code>$mention_name</code> 中的一个</li>
+<li>当类别为 <code>flood</code> 和 <code>static</code> 时，自定义内容不应该包含 <code>$mention_id</code> 或 <code>$mention_name</code></li>
+<li>仅当类别为 <code>multi</code> 时，<code>$code_count</code> 代号才会被有效替换</li>
+<li>当设定自定义提示的样式时（链接、加粗、斜体、代码块），请内容遵从 HTML 格式，请见：<a href="https://docs.pyrogram.org/topics/text-formatting#html-style" class="uri">https://docs.pyrogram.org/topics/text-formatting#html-style</a></li>
+</ol>
+<p>示例，自定义单用户入群时的提示：</p>
+<p><code>/custom single 您好 $mention_name，请您点击下方按钮进行验证，以证明您不是机器人</code></p>
+<p>本示例对应的效果：</p>
+<figure>
+<img src="../images/captcha-zh/custom-example.png" alt /><figcaption>示例效果</figcaption>
+</figure>
+<p>如需查看某个类别的设置，可如此操作：<code>/custom single</code></p>
+<hr />
+<h2 id="设置自定义问题">设置自定义问题</h2>
+<p>介绍如何设置自定义问题，以及说明自定义问题的验证流程。</p>
+<p><code>注意：</code></p>
+<ol type="1">
+<li><code>原则上我们不推荐群组使用自定义问题，建议群组有特殊需求时方才使用该功能。</code></li>
+<li>设置自定义问题需要与机器人进行私聊。在设计原则上，私聊的设置无法得到「操作可查原则」的保证。因此，若群组开启自定义问题，则认为群组主动放弃这部分设置的公开可查性，因此机器人将对 <code>/qns</code> 命令做证据留存，转发至 LOGGING 频道中。</li>
+<li>若群组使用自定义问题，则问题的难易度无法被托管者调控，当前群组验证通过与否对其他群组失去了参考价值，因此 CAPTCHA 将无法对用户产生评分，其他机器人也因此无法更好地评价用户的行为。</li>
+<li>自定义问题并不能脱离群组进行验证。</li>
+<li>使用自定义问题时，「自动免验证」功能将失效，因此对于用户来说无法减少重复验证。</li>
+</ol>
+<hr />
+<h3 id="自定义问题验证流程">自定义问题验证流程</h3>
+<h4 id="单个用户入群-1">单个用户入群</h4>
+<ol type="1">
+<li>机器人将禁言用户，同时机器人将回复用户的入群消息，提供问题和备选答案。</li>
+<li>提示消息中默认以用户 ID 的形式 mention 该用户。群组可通过命令自定义分割线前的入群提示。</li>
+</ol>
+<figure>
+<img src="../images/captcha-zh/qns-single.png" alt /><figcaption>单用户入群时的自定义问题</figcaption>
+</figure>
+<h4 id="多个用户入群-1">多个用户入群</h4>
+<ol type="1">
+<li>当多个用户入群时，机器人将禁言用户，同时机器人将回复用户的入群消息，提供问题和备选答案。</li>
+<li>自定义问题模式下，入群提示仍保留叠加特性，由于提示和问题只保留最后一条，因此<code>该多名用户所需回答的题目将保持一致</code>。该条验证提示消息会显示待验证的用户数量，同时，<code>会以多个不可见的字符在消息内 @ 所有待验证的用户</code>。群组可通过命令自定义分割线前的入群提示。</li>
+</ol>
+<figure>
+<img src="../images/captcha-zh/qns-multi.png" alt /><figcaption>多用户入群时的自定义问题</figcaption>
+</figure>
+<h4 id="回答正确">回答正确</h4>
+<p>如待验证用户在有限时间内回答正确，机器人将对该用户解除禁言。同时，用户会收到机器人的弹窗提示，告知验证通过。该用户即可在群组中正常发言。</p>
+<h4 id="回答错误">回答错误</h4>
+<p>如待验证用户在有限时间内回答错误，机器人将封禁该用户 n 小时（其中 n = 2^(m - 1) ，m 为验证失败次数）。同时，用户会收到机器人的弹窗提示，告知用户回答错误，验证失败，重试需要等待 n 小时。用户可在 n 小时后再次入群触发验证。</p>
+<figure>
+<img src="../images/captcha-zh/qns-wrong.png" alt /><figcaption>用户回答错误收到的弹窗提示</figcaption>
+</figure>
+<p>如需直接永久封禁该用户，请开启「封禁模式」。</p>
+<h4 id="验证超时">验证超时</h4>
+<p>自定义问题的验证等待时间为 <code>time_captcha</code> 的二分之一。即，当 <code>time_captcha</code> 设置为 240 时（默认），自定义问题等待时间为 120 秒。超时将导致验证失败。</p>
+<p>因自定义问题超时导致的验证失败，机器人将封禁相应用户 24 * n 小时（其中 n = 2^(m - 1) ，m 为验证失败次数）。用户可在 24 * n 小时后再次入群触发验证。</p>
+<p>如需直接永久封禁该用户，请开启「封禁模式」。</p>
+<h3 id="启用自定义问题">启用自定义问题</h3>
+<p>进行设置前，应先启用自定义问题功能，管理员在群组中发送：<code>/config_captcha qns on</code></p>
+<h3 id="请求设置会话">请求设置会话</h3>
+<p>管理员在群组中发送：<code>/qns</code></p>
+<p><em>执行此命令后，将视为群组已主动放弃「操作可查原则」提供的保护</em></p>
+<p>机器人将回报前往设置的按钮：</p>
+<figure>
+<img src="../images/captcha-zh/qns.png" alt /><figcaption>/qns 的回应</figcaption>
+</figure>
+<p>点击回报的按钮与机器人展开私聊，如图：</p>
+<figure>
+<img src="../images/captcha-zh/qns-start.png" alt /><figcaption>通过按钮 /start</figcaption>
+</figure>
+<p>该设置会话将维持 600 秒，期间该群组不接受其他管理员的自定义问题设置。若在本次会话中操作超时，则机器人不再会有任何响应。</p>
+<h3 id="添加问题">添加问题</h3>
+<p>添加问题时，命令为 <code>/add</code>，请使用一行三个加号 <code>+++</code> 来分隔问题、正确答案、错误答案，如果正确答案或错误答案部分，有多个，则用换行分隔。例如：</p>
+<pre><code>/add 问题描述
++++
+正确答案 1
+正确答案 2
++++
+错误答案 1
+错误答案 2
+错误答案 3</code></pre>
+<p>注意事项：</p>
+<ol type="1">
+<li>问题描述不得超过 140 字。</li>
+<li>单个答案长度不得超过 64 字节，换算即：以全部是汉字为例，字数不得超过 21 ；以全部是英文字符为例，字数不得超过 64。</li>
+<li>正确答案和错误答案的总数不得超过 6 个。</li>
+<li>群组自定义问题的总数不得超过 20 个。</li>
+<li>当设定自定义问题的样式时（链接、加粗、斜体、代码块），请内容遵从 HTML 格式，请见：<a href="https://docs.pyrogram.org/topics/text-formatting#html-style" class="uri">https://docs.pyrogram.org/topics/text-formatting#html-style</a></li>
+<li>只有问题可以设置样式，答案不可设置样式</li>
+</ol>
+<figure>
+<img src="../images/captcha-zh/qns-add.png" alt /><figcaption>添加问题</figcaption>
+</figure>
+<p>如图所示，若添加成功，则机器人将回复问题简述，消息下方的按钮仅供效果预览，点击任意按钮将导致按钮消失。</p>
+<h3 id="编辑已有问题">编辑已有问题</h3>
+<p>编辑问题遵从的格式与添加问题类似，命令为 <code>/edit</code>，<code>/edit</code> 后要附加问题编号。例如：</p>
+<pre><code>/edit 问题编号 问题描述
++++
+正确答案 1
+正确答案 2
++++
+错误答案 1
+错误答案 2
+错误答案 3</code></pre>
+<figure>
+<img src="../images/captcha-zh/qns-edit.png" alt /><figcaption>编辑问题</figcaption>
+</figure>
+<p>群组选择编辑问题而不是删除问题，是为了可保留该问题的统计数据。</p>
+<h3 id="删除已有问题">删除已有问题</h3>
+<p>删除问题的命令为 <code>/remove</code>，后跟问题编号，例如：<code>/remove 问题编号</code></p>
+<figure>
+<img src="../images/captcha-zh/qns-remove.png" alt /><figcaption>删除问题</figcaption>
+</figure>
+<p>除使用 <code>/remove</code> 外，还可使用 <code>/rm</code>，效果相同。</p>
+<h3 id="显示所有问题">显示所有问题</h3>
+<p>显示问题的命令为：<code>/show</code></p>
+<figure>
+<img src="../images/captcha-zh/qns-show.png" alt /><figcaption>显示所有问题</figcaption>
+</figure>
+<p>如图，将显示该问题的详情，和在群组中的提出次数、通过率、参与率、答错率。</p>
+<ul>
+<li>提出次数：机器人成功发送出问题的次数</li>
+<li>通过率：<code>通过验证人数</code>占<code>提出次数</code>的百分比</li>
+<li>参与率：<code>参与回答问题（无论正确或失败）的人数</code>占<code>提出次数</code>的百分比</li>
+<li>答错率：<code>回答错误的人数</code>占<code>参与回答问题人数</code>的百分比</li>
+</ul>
+<p>当问题数量大于 5 时，将自动以 TXT 文件的形式发送报告。如需手动要求以文件形式显示，则发送：<code>/show file</code></p>
+<figure>
+<img src="../images/captcha-zh/qns-show-file.png" alt /><figcaption>以 TXT 文件形式显示所有问题</figcaption>
+</figure>
+<h3 id="极端情况应对-1">极端情况应对</h3>
+<p>在大量用户短时间内入群（炸群）时，机器人将回归常规验证模式，并采取常规验证模式的极端情况应对方法，要求所有待验证用户加入专用验证群组进行验证。</p>
+<hr />
+<h2 id="实用命令">实用命令</h2>
+<p>以下介绍本机器人可响应的文字命令。</p>
+<hr />
+<h3 id="群组管理员">群组管理员</h3>
+<ul>
+<li><code>/captcha</code>：手动对被回复的成员发起一次验证</li>
+<li><code>/pass</code>：回复某用户的入群消息，使该待验证用户跳过验证</li>
+<li><code>/pass @username</code>：令 username 为 <span class="citation" data-cites="username">@username</span> 的用户在本群中通过验证。此命令亦可在用户尚未加群 / 验证失败时使用。</li>
+<li><code>/pass 12345678</code>：令用户 ID 为 12345678 的用户在本群中通过验证。此命令亦可在用户尚未加群 / 验证失败时使用。</li>
+<li><code>/static</code>：手动获取一条长期有效的静态验证提示，此提示可用于置顶或引用</li>
+</ul>
+<h3 id="scp-079-captcha-中的成员">SCP-079-CAPTCHA 中的成员</h3>
+<ul>
+<li><code>/pass</code>：回复某用户的入群消息，使该待验证用户通过验证（对已验证失败的用户无效）</li>
+</ul>
+<h3 id="scp-079-test-中的成员">SCP-079-TEST 中的成员</h3>
+<ul>
+<li><code>/version</code>：检查机器人版本</li>
+</ul>
+<hr />
+<h2 id="问与答">问与答</h2>
+<p>常见问题汇总。</p>
+<hr />
+<p><strong>Q：为什么在非自定义问题模式下，不在群内进行验证的全部流程？</strong></p>
+<p>A：有时多个用户在短时间内入群，机器人的大量验证码反而会导致刷屏，对群内的正常对话造成很大干扰。而且，这种刷屏问题不符合项目 “最少发言” 的设计原则。</p>
+<p><strong>Q：为什么不采取私聊机器人，而是在专用的验证群组中操作？</strong></p>
+<p>A：私聊的验证是可行的，但同时带来了透明度问题。私聊导致机器人的验证流程无法可靠地受到监督，而在专用群组中，CAPTCHA 所在群组的所有管理员都可以随意加入，每个用户的验证流程都是对管理员们可见的，这种更直观的表达增加了机器人的透明度。同时，在群组中的直接展示，利于及时发现验证过程中出现的问题和错误。而且，这种私聊过程中的不透明性不符合项目 “操作可查” 的原则。</p>
+<p><strong>Q：如果某用户连续加入了多个群组，触发了多个验证请求后，再去通过了验证，会发生什么？</strong></p>
+<p>A：如在 “有限时间内” 通过了一次验证，该用户将同时在所有等待验证的群组中被解除限制（除设置自定义问题的群组外），均可正常发言。</p>
+<p><strong>Q：在上一问题的答案中，机器人是如何计算 “有限时间内”？</strong></p>
+<p>A：若连续加入了多个群组，则以最开始加入群组（除设置自定义问题的群组外）的时间点为起点，240 秒后为终点，在此期间完成验证才视为有效，否则将导致超时。</p>
+<p><strong>Q：假设群组启用了自定义问题模式，当用户入群尚未回答问题的时候，群管修改或删除了该问题，或者群管关闭了自定义问题模式，机器人将如何处理该用户的验证？</strong></p>
+<p>A：此情况下，无论用户点击哪个答案按钮，均将通过验证。</p>
+<hr />
+<h2 id="申请使用或自建">申请使用或自建</h2>
+<hr />
+<p>如欲申请使用，请查看<a href="../ApplyForUse/">申请方法</a>。然而，我们鼓励您通过<a href="https://github.com/scp-079/scp-079-captcha">源代码</a>自行建立此机器人，如搭建过程中有任何疑问请至<a href="https://t.me/SCP_079_CHAT">讨论群</a>提出。</p>
+</main>
+<footer>
+Site proudly generated by
+<a href="https://jaspervdj.be/hakyll/" target="_blank">Hakyll</a>
+</footer>
+<button onclick="topFunction();PlaySound('totop2')" onmouseover="PlaySound('totop1')" onmouseout="StopSound('totop1')" id="totop">Top</button>
+<script>
+    window.onscroll = function() {scrollFunction()};
+    function scrollFunction() {
+        if (document.body.scrollTop > 682 || document.documentElement.scrollTop > 682) {
+            document.getElementById("totop").style.display = "block";
+        } else {
+            document.getElementById("totop").style.display = "none";
+        }
+        }
+        function topFunction() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+    }
+</script>
+
+<!-- https://gist.github.com/allybee/5871749 -->
+<script>
+function targetBlank() {
+  var internal = location.host.replace("www.", "");
+      internal = new RegExp(internal, "i");
+      
+  var a = document.getElementsByTagName('a');
+  
+  for (var i = 0; i < a.length; i++) {
+    var href = a[i].host;
+    if( !internal.test(href) ) {
+      a[i].setAttribute('target', '_blank');
+    }
+  }
+};
+targetBlank();
+</script>
+
+<audio id="a_button" src="../audio/button/hover.ogg"></audio>
+<audio id="click_button" src="../audio/button/click.ogg"></audio>
+<audio id="dooropen1" src="../audio/door/dooropen1.ogg"></audio>
+<audio id="dooropen2" src="../audio/door/dooropen2.ogg"></audio>
+<audio id="totop1" src="../audio/button/totop1.ogg"></audio>
+<audio id="totop2" src="../audio/button/totop2.ogg"></audio>
+<script>
+function PlaySound(soundobj) {
+    var thissound=document.getElementById(soundobj);
+    thissound.play();
+}
+
+function StopSound(soundobj) {
+    var thissound=document.getElementById(soundobj);
+    thissound.pause();
+    thissound.currentTime = 0;
+}
+
+document.body.addEventListener("mouseover",function(e) {
+    e = e || window.event;
+    var targetElem = e.target || e.srcElement;
+    if (targetElem.nodeName == "A" && targetElem.className != "sourceLine") {
+        switch(targetElem.className) {
+            case "no":
+                PlaySound("no_button")
+            break;
+            default:
+                PlaySound("a_button")
+        }
+    }
+},false);
+
+document.body.addEventListener("mouseout",function(e) {
+    e = e || window.event;
+    var targetElem = e.target || e.srcElement;
+    if (targetElem.nodeName == "A" && targetElem.className != "sourceLine") {
+        switch(targetElem.className) {
+            case "no":
+                StopSound("no_button")
+            break;
+            default:
+                StopSound("a_button")
+        }
+    }
+},false);
+
+document.body.addEventListener("click",function(e) {
+    e = e || window.event;
+    var targetElem = e.target || e.srcElement;
+    if (targetElem.nodeName == "A" && targetElem.className != "sourceLine") {
+        if (targetElem.className == "no") {
+            PlaySound("no_click")
+        } else {
+            PlaySound("click_button");
+            switch(targetElem.className) {
+                case "key":
+                    setTimeout(function(){ 
+                        PlaySound("dooropen3");
+                    }, 500);
+                break;
+                case "rss":
+                    setTimeout(function(){ 
+                        PlaySound("dooropen2");
+                    }, 500);
+                break;
+                case "079":
+                    setTimeout(function(){ 
+                        PlaySound("dooropen079");
+                    }, 500);
+                break;
+                default:
+                    setTimeout(function(){ 
+                        PlaySound("dooropen1");
+                    }, 500);
+            }
+        }
+    }
+},false);
+</script>
+
+
+</body>
+</html>
